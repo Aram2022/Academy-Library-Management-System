@@ -1,9 +1,5 @@
 [
     {
-        "fullName": "Aram Vardevanyan"
-    },
-
-    {
         "title": "You Don't Know JS: Scope & Closures",
         "authors": ["Kyle Simpson"],
         "isbn": "9781260442321",

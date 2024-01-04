@@ -1,0 +1,465 @@
+/* #D500C8 #71FFEA */
+
+*{
+    padding: 0; margin: 0;
+    font-family: "Courgette", cursive;
+    font-size: 18px;
+    box-sizing: border-box;
+    /* border:none; outline:none; */
+}
+
+button:hover{
+    cursor: pointer;
+}
+
+/* a:link{
+    color:gray;
+}
+
+a:visited{
+    color:gray;
+} */
+
+
+/* ================ Home Page Wireframe ============= */
+
+
+/* ================ HEADER ============= */
+
+header{
+    background-color: #333;
+    /* position:fixed;
+    top: 0; left: 0; right:0;
+    z-index:1000; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+.logo{
+    height: 60px;
+}
+
+header a{
+    color: #fff;
+    padding: 5px;
+}
+
+header a:hover{
+    background-color: #555;
+}
+
+/* ================ MAIN AREA ============= */
+
+.welcome{
+    min-height:100vh;
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    position: relative;
+    flex-direction: column;
+    background-color: #000;
+}
+
+.welcome h1{
+    font-size: 64px;
+    color: #fff;
+    z-index: 1000;
+}
+
+.welcome h2{
+    font-size: 32px;
+    color:#fff;
+    z-index: 1000;
+}
+.welcome .bg{
+    opacity:  0.3;
+    position:absolute;
+    width: 100%;
+    height: 100%;
+    /* object-fit: cover; */
+}
+
+.books{  
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    overflow: hidden;
+    gap: 2%;
+    height: 400px;
+    width: 90%;
+}
+
+.books.clicked{
+    overflow: visible;
+    height: auto;
+    margin-bottom: 150px;
+}
+
+.books a{
+    border: 1px solid #fff;
+    border-radius: 15px;
+    display: flex;
+    padding: 10px;
+    margin: 20px;
+    background: #000;
+    opacity: 0.9;
+    text-decoration: none;
+}
+
+.books a img{
+    height: 100%;
+    width: 25%;
+    cursor: pointer;
+}
+
+.welcome p{
+    font-weight: bold;
+    padding: 10px;
+    color: #fff;
+    text-align: center;
+}
+
+.welcome p:hover{
+    color: #007bff;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.welcome button{
+    background: #007bff;
+    color: #fff;
+    padding: 10px;
+    display: block;
+    margin: 50px auto;
+    z-index: 1000;
+}
+
+.welcome button:hover{
+    color:black;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+
+/* ================ Carousel Layout  ============= */
+
+.additions{
+    /* width: 80%;
+    margin: auto;
+    overflow: hidden; */
+    position: relative;
+    color:#fff;
+    opacity: 0.9;
+    padding-bottom: 100px;
+}
+
+.additions h3{
+    font-size: 32px;
+    text-align: center;
+    padding: 30px;
+}
+
+.additions img{
+    width: 250px;
+    height: 350px;
+    cursor: pointer;
+}
+
+.carousel-track {
+    display: flex;
+    background: #000;
+    /* transition: transform 0.5s ease-in-out; */
+}
+
+.carousel-item {
+    padding:  10px;
+    text-decoration: none;
+    /* flex: 0 0 calc(80% / 5);
+    box-sizing: border-box; */
+}
+
+.carousel-button {
+    cursor: pointer;
+    position: absolute;
+    top: 40%;
+    /* transform: translateY(-50%); */
+}
+
+.prev {
+    left: -50px;
+}
+
+.next {
+    right: -50px;
+}
+
+
+/* ================ FOOTER ============= */
+
+footer{
+    display:flex;
+    justify-content: space-around;
+    padding: 10px;
+    color:gray;
+    background: #000;
+}
+footer h4{
+    padding-bottom: 10px;
+}
+
+footer a{
+    display: block;
+}
+footer a:link{
+    color:gray;
+    text-decoration: none;
+}
+
+footer a:visited{
+    color:gray;
+}
+
+footer a:hover{
+    color:#007bff;
+    text-decoration: underline;
+}
+
+
+/* ================ Catalog Page Wireframe ============= */
+
+
+.catalog{
+    display: flex;
+    background: #71FFEA;
+    min-height: 700px;
+}
+
+.catalog form{
+    display: flex;
+}
+
+.search{
+    background: #f2f2f2;
+}
+
+.search input, button{
+    background: #f2f2f2;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.search button{
+    cursor: pointer;
+}
+
+.filter{
+    padding: 20px;
+}
+
+.filter h2{
+    padding:20px  0 20px 0;
+}
+
+.filter a{
+    display:block;
+    padding: 10px;
+}
+
+.filter a:hover{
+    color:#007bff;
+    background: #e6e6e6;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.filter button{
+    background: #007bff;
+    color:white;
+    cursor: pointer;
+    margin-top: 30px;
+}
+
+.list-books{  
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 3%;
+}
+
+.list-books .inner{
+    border: 1px solid #000;
+    border-radius: 15px;
+    display: flex;
+    margin: 20px;
+    padding: 10px;
+    background: #f2f2f2;
+}
+
+.list-books a{
+    text-decoration: none;
+    color: #000;
+
+}
+
+.list-books a img{
+    width: 30%;  
+    cursor: pointer;
+}
+
+.catalog p{
+    font-weight: bold;
+    padding: 10px;
+    text-align: center;
+}
+
+.catalog p:hover{
+    color: #007bff;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.listings button{
+    background: #007bff;
+    color:white;
+    cursor: pointer;
+    display: block;
+    margin: 50px auto;
+}
+
+/* =======   User Login/Registration Page Wireframe ======= */
+
+.login{
+    text-align: center;
+    color: gray;
+    padding: 100px;
+    background: #71FFEA;
+}
+
+.login p{
+    padding: 10px;
+}
+
+.login h2{
+    font-size: 32px;
+    padding-bottom: 30px;
+}
+
+.login input{
+    background: #f2f2f2;
+    border-radius: 5px;
+    padding: 10px;
+    width: 400px;
+}
+
+.login input:hover{
+    background: #e6e6e6;
+}
+
+.login button{
+    display: block;
+    margin: 20px auto;
+    width: 400px;
+    padding: 10px;
+    background: #007bff;
+    color:#fff;
+    cursor:pointer;
+}
+
+.login a{
+    padding: 10px;
+    cursor: pointer;
+}
+
+.login a:hover{
+    color:#007bff;
+    text-decoration: underline;
+}
+
+
+/* =======   Book Details Page Wireframe ======= */
+
+.details{
+    background: #71FFEA;
+}
+
+.det-books div{
+    /* display: none; */
+    display:flex;
+    text-align: center;
+    padding: 20px;
+}
+
+/* .det-books div:nth-child(2){
+    display:flex;
+} */
+
+.det-books img{
+    max-width: 400px;
+    max-height: 600px;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.det-books h2{
+    font-size: 28px;
+    color:#000;
+    padding: 10px;
+}
+
+.det-books p{
+    color:gray;
+    padding: 10px;
+}
+
+.det-books article{
+    width: 30%;
+}
+
+.det-books button{
+    color: #fff;
+    background: #007bff;
+    margin: 20px;
+}
+
+.details h3{
+    font-size: 24px;
+    padding-left: 30px;
+    padding-top: 30px;
+} 
+
+.rel-books{  
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 2%;
+}
+
+.rel-books a{
+    border: 1px solid #000;
+    display: flex;
+    padding: 10px;
+    margin: 30px;
+    text-decoration: none;
+    background: #f2f2f2;
+    color: #000;
+    border-radius: 15px;
+}
+
+.rel-books a:hover{
+    color: #007bff;
+    text-decoration: underline;
+}
+
+.rel-books a img{
+    height: 100%;
+    width: 25%;
+    cursor: pointer;
+}
+
+.rel-books p{
+    padding: 10px;
+}
+

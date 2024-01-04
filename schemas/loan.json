@@ -1,0 +1,8 @@
+[
+    {
+        "user": "Name Surname",
+        "books": ["Book name"],
+        "loan_date": "11.12.23",
+        "return_date": "11.01.24"
+    }
+]

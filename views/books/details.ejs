@@ -1,0 +1,17 @@
+<!-- views/bookDetails.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= book.title %> Details</title>
+</head>
+<body>
+  <h1><%= book.title %> Details</h1>
+  <p>Author: <%= book.authors.join(', ') %></p>
+  <p>ISBN: <%= book.isbn %></p>
+  <p>Published Year: <%= book.published_year %></p>
+  <p>Category: <%= book.category %></p>
+  <p>Availability: <%= book.availability %></p>
+</body>
+</html>

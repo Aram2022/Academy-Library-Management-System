@@ -1,0 +1,202 @@
+<!-- books.ejs -->
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>List of Books</title>
+</head>
+<body>
+  <h1>List of Books</h1>
+  <ul>
+    <% books.forEach(book => { %>
+      <li><%= book.title %></li>
+    <% }); %>
+  </ul>
+</body>
+</html> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet"  type="text/css" href="/css/style.css">
+    <title>Book Detail</title>
+</head>
+
+<body>
+
+    <!-- Book Details Page Wireframe -->
+
+    <!-- HEADER -->
+
+    <header class="header">
+
+        <a href="index.html"><img src="/images/logo.png" class="logo"></a>
+
+        <nav class="navbar">
+            <a href="index.html">Home</a>
+            <a href="catalog.html">Catalog</a>
+            <a href="login.html">Login/Register</a>
+        </nav>
+
+    </header>
+
+    <!-- Main Area -->
+
+    <section class="details">
+        <!-- <% books.forEach(book => { %>
+            <div>
+                <img src="<%= book.image %>">
+                <article>
+                    <h2>Title: <%= book.title %></h2>
+                    <h2>Author: <%= book.author %></h2>
+                    <h2>Genre: <%= book.genre %></h2>
+                    <p>Synopsis: <%= book.synopsis %></p>
+                    <button>Borrow</button>
+                    <button>Reserve</button>
+                </article>
+            </div>
+        <% }); %> -->
+        <!-- <div class="det-books">
+            <div>
+                <img src="/images/book1.jpg">
+                <article>
+                    <h2>Title: The Art Of Computer Programming</h2>
+                    <h2>Author: Donalde Knuth</h2>
+                    <h2>Genre: Programming</h2>
+                    <p>Synopsis: Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos, consequatur dolorum,
+                        totam repudiandae
+                        non accusamus omnis exercitationem, aut accusantium neque consequuntur nisi placeat at aliquam.
+                        Quidem optio ab esse rem.</p>
+                </article>
+            </div>
+            <div>
+                <img src="/images/book2.jpg">
+                <article>
+                    <h2>Title: Clean Code</h2>
+                    <h2>Author: Robert C. Martin</h2>
+                    <h2>Genre: Programming</h2>
+                    <p>Synopsis: Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos, consequatur dolorum,
+                        totam
+                        repudiandae non accusamus omnis exercitationem, aut accusantium neque consequuntur nisi placeat
+                        at aliquam. Quidem optio ab esse rem.</p>
+                    <button>Borrow</button>
+                    <button>Reserve</button>
+                </article>
+            </div>
+            <div>
+                <img src="/images/book3.jpg">
+                <article>
+                    <h2>Title: Dessign Patterns</h2>
+                    <h2>Author: Erich Gamma</h2>
+                    <h2>Genre: Programming</h2>
+                    <p>Synopsis: Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos, consequatur dolorum,
+                        totam repudiandae
+                        non accusamus omnis exercitationem, aut accusantium neque consequuntur nisi placeat at aliquam.
+                        Quidem optio ab esse rem.</p>
+                </article>
+            </div>
+            <div>
+                <img src="/images/book4.jpg">
+                <article>
+                    <h2>Title: The Pragmatic Programmer</h2>
+                    <h2>Author: David Thomas</h2>
+                    <h2>Genre: Programming</h2>
+                    <p>Synopsis: Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos, consequatur dolorum,
+                        totam repudiandae
+                        non accusamus omnis exercitationem, aut accusantium neque consequuntur nisi placeat at aliquam.
+                        Quidem optio ab esse rem.</p>
+                </article>
+            </div>
+            <div>
+                <img src="/images/book5.jpg">
+                <article>
+                    <h2>Title: Soft Skills</h2>
+                    <h2>Author: John Sonmez</h2>
+                    <h2>Genre: Programming</h2>
+                    <p>Synopsis: Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos, consequatur dolorum,
+                        totam repudiandae
+                        non accusamus omnis exercitationem, aut accusantium neque consequuntur nisi placeat at aliquam.
+                        Quidem optio ab esse rem.</p>
+                </article>
+            </div>
+            <div>
+                <img src="/images/book6.jpg">
+                <article>
+                    <h2>Title: Java Script</h2>
+                    <h2>Author: David Flanagan</h2>
+                    <h2>Genre: Programming</h2>
+                    <p>Synopsis: Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos, consequatur dolorum,
+                        totam repudiandae
+                        non accusamus omnis exercitationem, aut accusantium neque consequuntur nisi placeat at aliquam.
+                        Quidem optio ab esse rem.</p>
+                </article>
+            </div>
+        </div> -->
+        <h3>Releated Books</h3>
+        <div class="rel-books">
+            <a href="book.html">
+                <img src="/images/book1.jpg">
+                <p>The Art Of Computer Programming</p>
+                <p>Donalde Knuth</p>
+            </a>
+            <a href="book.html">
+                <img src="/images/book2.jpg">
+                <p>Clean Code</p>
+                <p>Robert C. Martin</p>
+            </a>
+            <a href="book.html">
+                <img src="/images/book3.jpg">
+                <p>Dessign Patterns</p>
+                <p>Erich Gamma</p>
+            </a>
+            <a href="book.html">
+                <img src="/images/book4.jpg">
+                <p>The Pragmatic Programmer</p>
+                <p>David Thomas</p>
+            </a>
+            <a href="book.html">
+                <img src="/images/book5.jpg">
+                <p>Soft Skills</p>
+                <p>John Sonmez</p>
+            </a>
+            <a href="book.html">
+                <img src="/images/book6.jpg">
+                <p>Java Script</p>
+                <p>David Flanagan</p>
+            </a>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+
+    <footer>
+        <div>
+            <h4>Contact Us</h4>
+            <p>Academy Address</p>
+            <p>City, State Zip</p>
+            <p>Phone: (123) 456-7890</p>
+            <p>Email: info@academy.com</p>
+        </div>
+        <div>
+            <h4>Library Hours</h4>
+            <p>Monday - Friday: 9am - 5pm</p>
+            <p>Saturday: 10am - 4pm</p>
+            <p>Sunday: Closed</p>
+        </div>
+        <div>
+            <h4>Helpful Links</h4>
+            <a href="https://picsartacademy.am/">Academy Website</a>
+            <a href="https://www.facebook.com/PicsartArmenia">Facebook</a>
+            <a href="">Twitter</a>
+            <a href="">Feedback Form</a>
+        </div>
+    </footer>
+
+</body>
+
+</html>

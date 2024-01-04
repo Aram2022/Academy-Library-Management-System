@@ -1,54 +1,168 @@
-// // Import the express module
+const express = require('express');
+const app = express();
+const path = require('path');
+const port = 3000;
+
+const fs = require('fs'); // file system
+const booksFilePath = path.join(__dirname, 'schemas', 'books.json');
+const booksData = JSON.parse(fs.readFileSync(booksFilePath, 'utf-8'));
+
+app.get('/books/:isbn', (req, res) => {
+    const isbn = req.params.isbn;
+    const book = booksData.find(book => book.isbn === isbn);
+  
+    if (!book) {
+      res.status(404).send('Book not found');
+      return;
+    }
+  
+    res.render('book', { book });
+});  
+
+
+// Set EJS as the view engine
+app.set('view engine', 'ejs');
+
+// Specify the directory where EJS files are located
+app.set('views', path.join(__dirname, 'views'));
+
+// Serve static files from the 'public' directory
+app.use(express.static(path.join(__dirname, 'public')));
+  
+// Define a route to render the index.ejs file
+app.get('/', (req, res) => {
+    res.render('index', {booksData}); 
+});
+
+app.get('/catalog', (req, res) => {
+    res.render('catalog', {booksData}); 
+});
+  
+app.get('/login', (req, res) => {
+    res.render('login'); 
+});
+
+app.get('/book', (req, res) => {
+    res.render('book', {booksData});
+});
+   
+app.listen(port, () => {
+    console.log(`Server is listening at http://localhost:${port}`);
+});
+
+
+
+
 // const express = require('express');
-
-// // Create an instance of the express application
+// const mongoose = require('mongoose');
+// const Book = require('./schema');
 // const app = express();
+// const port = 3003;
 
-// // Define a route for the root URL
-// app.get('/', (req, res) => {
-//   res.send('Hello, World!');
+// const mongoDB = async() => {
+// 	try {
+// 		const conn = await mongoose.connect('mongodb://127.0.0.1:27017/book');
+// 		console.log(`MongoDB connected: ${conn.connection.host}:${conn.connection.port}`);
+// 	} catch (error) {
+// 		console.log(error);
+// 		process.exit(1);
+// 	}
+// };
+
+// mongoDB();
+
+// app.use(express.json());
+// app.post('/api/books', async(req, res) => {
+// 	try {
+// 		const book = new Book(req.body);
+// 		const x = await book.save();
+// 		res.status(201).json(book);
+// 	} catch (error) {
+// 		res.status(400).json({message: error});
+// 	}
 // });
 
-// // Set up the server to listen on a specific port (e.g., 3000)
-// const port = process.env.PORT || 3000;
 // app.listen(port, () => {
-//   console.log(`Server is running on port ${port}`);
+// 	console.log(`Server is running on port:${port}`);
+
+// })
+
+
+
+
+
+// const fs = require('fs'); // Require the 'fs' module for file system operations
+
+
+// // Read books from the JSON file
+// const booksData = fs.readFileSync('books.json', 'utf8');
+// const books = JSON.parse(booksData);
+
+// app.get('/books', (req, res) => {
+//     res.render('books', { books });
 // });
 
 
-let currentIndex = 0;
+// const User = require('./models/user'); 
 
-function showSlide(index) {
-  const track = document.querySelector('.carousel-track');
-  const itemWidth = document.querySelector('.carousel-item').offsetWidth;
-  const newPosition = -index * itemWidth;
-  track.style.transform = `translateX(${newPosition}px)`;
-  currentIndex = index;
-}
+// const UserController = { 
+//     listUsers: function(req, res) { 
+//         User.find({}, function(err, users) { 
+//             if (err) { 
+//                 res.status(500).send(err); 
+//             } else { 
+//                 res.render('users', { users: users }); 
+//             } 
+//          }); 
+//       } 
+// } 
+// module.exports = UserController;
 
-function prevSlide() {
-  currentIndex = (currentIndex - 1 + getTotalItems()) % getTotalItems();
-  showSlide(currentIndex);
-}
+// const { Book, User, Loan } = require('./schemas'); // Import the JSON data 
 
-function nextSlide() {
-  currentIndex = (currentIndex + 1) % getTotalItems();
-  showSlide(currentIndex);
-}
 
-// function prevSlide() {
-//   currentIndex = Math.max(currentIndex - 1, 0);
-//   showSlide(currentIndex);
-// }
 
-// function nextSlide() {
-//   const totalItems = getTotalItems();
-//   currentIndex = Math.min(currentIndex + 1, totalItems - 5);
-//   showSlide(currentIndex);
-// }
 
-function getTotalItems() {
-  return document.querySelectorAll('.carousel-item').length;
-}
+// // app.js (continued)
+// app.get('/books', (req, res) => {
+//   const books = Book.getAll();
+//   res.render('books', { books }); // Render the 'books' view and pass data
+// });
 
-showSlide(currentIndex);
+// app.get('/books/:id', (req, res) => {
+//   const bookId = req.params.id;
+//   const book = Book.getById(bookId); // Assuming you have a method to get a book by ID
+//   res.render('bookDetails', { book }); // Render the 'bookDetails' view and pass data
+// });
+
+// // Your other routes and logic go here...
+
+
+
+
+// app.post('/api/users', (req, res) => {
+//   // Handle POST request to create a new user
+//   res.send('User created successfully.');
+// });
+
+// app.put('/api/users/:id', (req, res) => {
+//   // Handle PUT request to update a user by ID
+//   res.send(`User ${req.params.id} updated successfully.`);
+// });
+
+// app.delete('/api/users/:id', (req, res) => {
+//   // Handle DELETE request to delete a user by ID
+//   res.send(`User ${req.params.id} deleted successfully.`);
+// });
+
+
+// // app.js (continued)
+// app.get('/users/:id', (req, res) => {
+//   const userId = req.params.id;
+//   res.send(`User ID: ${userId}`);
+// });
+
+
+// // app.js (continued)
+// app.use(express.static('public'));
+

@@ -1,0 +1,14 @@
+# Dependencies. Ignore Node.js modules
+/node_modules
+
+# Ignore log files
+*.log
+
+# Ignore environment files, environment variables
+.env
+
+# Operating System Files
+.DS_Store
+
+# Others
+dist

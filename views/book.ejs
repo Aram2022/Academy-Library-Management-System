@@ -1,1 +1,76 @@
 
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <title>Book Detail</title>
+</head>
+
+<body>
+
+    <!-- Book Details Page Wireframe -->
+
+    <!-- HEADER -->
+    
+    <%- include('partials/navbar') %>
+
+    <!-- Main Area -->
+
+    <section class="details">
+        <div class="det-books">
+                <div>
+                    <img src="<%= book.cover_url %>">
+                    <article>
+                        <h2>Title: <%= book.title %></h2>
+                        <h2>Author: <%= book.authors %></h2>
+                        <h2>Genre: <%= book.category.join(', ') %></h2>
+                        <button>Borrow</button>
+                        <button>Reserve</button>  
+                    </article>
+                </div>
+        </div>
+        <h3>Releated Books</h3>
+        <div class="rel-books">
+
+            <a href="book">
+                <img src="/images/book1.jpg">
+                <p>The Art Of Computer Programming</p>
+                <p>Donalde Knuth</p>
+            </a>
+            <a href="book">
+                <img src="/images/book2.jpg">
+                <p>Clean Code</p>
+                <p>Robert C. Martin</p>
+            </a>
+            <a href="book">
+                <img src="/images/book3.jpg">
+                <p>Dessign Patterns</p>
+                <p>Erich Gamma</p>
+            </a>
+            <a href="book">
+                <img src="/images/book4.jpg">
+                <p>The Pragmatic Programmer</p>
+                <p>David Thomas</p>
+            </a>
+            <a href="book">
+                <img src="/images/book5.jpg">
+                <p>Soft Skills</p>
+                <p>John Sonmez</p>
+            </a>
+            <a href="book">
+                <img src="/images/book6.jpg">
+                <p>Java Script</p>
+                <p>David Flanagan</p>
+            </a>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+
+    <%- include('partials/footer') %>
+
+</body>
+</html>
